@@ -1,0 +1,17 @@
+language: c
+
+compiler:
+    - gcc
+    - clang
+
+# Note, add > /dev/null to the end of all these commands once they work
+install:
+    - git clone git://github.com/cloudef/wlc.git
+    - cd wlc
+    - cmake .
+    - make
+    - sudo make install
+
+script:
+    cmake .
+    make
