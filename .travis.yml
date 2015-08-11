@@ -11,15 +11,15 @@ before_install:
     - sudo apt-get install libosmesa6
     - sudo apt-get install xcb
     - sudo apt-get install pkg-config
-    - curl https://launchpad.net/ubuntu/+archive/primary/+files/xcb-proto_1.11.orig.tar.gz -o xcb-proto.tgz
-    - tar -xpzf xcb-proto.tgz
+    - wget https://launchpad.net/ubuntu/+archive/primary/+files/xcb-proto_1.11.orig.tar.gz
+    - tar -xpzf xcb-proto_1.11.orig.tar.gz
     - cd xcb-proto-1.11
     - ./configure
     - make
     - sudo make install
     - cd ..
-    - curl  http://xcb.freedesktop.org/dist/libxcb-1.11.tar.gz -o libxcb.tgz
-    - tar -xpzf libxcb.tgz
+    - wget http://xcb.freedesktop.org/dist/libxcb-1.11.tar.gz
+    - tar -xpzf libxcb.1.11.tar.gz
     - cd libxcb-1.11
     - ./configure
     - make
