@@ -19,7 +19,7 @@ before_install:
     - sudo make install
     - cd ..
     - wget http://xcb.freedesktop.org/dist/libxcb-1.11.tar.gz
-    - tar -xpzf libxcb.1.11.tar.gz
+    - tar -xpzf libxcb-1.11.tar.gz
     - cd libxcb-1.11
     - ./configure
     - make
