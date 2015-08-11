@@ -10,7 +10,7 @@ before_install:
     - sudo apt-get install libwayland0
     - sudo apt-get install libglapi-mesa
     - sudo apt-get install libosmesa6
-    - sudo ldconfig
+    - sudo apt-get install libxkbcommon0
 
 # Note, add > /dev/null to the end of all these commands once they work
 install:
@@ -19,6 +19,7 @@ install:
     - cmake . -DCMAKE_INSTALL_PREFIX=/usr
     - make
     - sudo make install
+    - sudo ldconfig
     - cd ..
 
 script:
