@@ -45,7 +45,8 @@ before_install:
     # Install libtool for mtdev for libinput
     - sudo apt-get install libmtdev1
     # Install libevdev for libinput
-    - sudo apt-get install libevdev-dev
+    - wget http://mirrors.kernel.org/ubuntu/pool/universe/libe/libevdev/libevdev-dev_1.0.99.2+dfsg-2ubuntu2_amd64.deb
+    - sudo dpkg -i libevdev-dev_1.0.99.2+dfsg-2ubuntu2_amd64.deb
     # Install libinput for wlc
     - git clone git://anongit.freedesktop.org/wayland/libinput
     - cd libinput
