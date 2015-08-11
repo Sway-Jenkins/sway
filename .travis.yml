@@ -8,16 +8,16 @@ before_install:
     - sudo apt-get update -qq
     - sudo apt-get install xorg
     - sudo apt-get install libwayland0
-    - sudo apt-get install libglapi-mesa
     - sudo apt-get install libosmesa6
-    - sudo apt-get install x11-xkb-utils
     - sudo apt-get install xcb
+    - sudo apt-get install libxcb-composite0-dev
     - sudo ldconfig
 
 # Note, add > /dev/null to the end of all these commands once they work
 install:
     - git clone git://github.com/cloudef/wlc.git
     - cd wlc
+    - git submodule update --init --recursive
     - cmake . -DCMAKE_INSTALL_PREFIX=/usr
     - make
     - sudo make install
