@@ -10,7 +10,8 @@ before_install:
     - sudo apt-get install libwayland0
     - sudo apt-get install libglapi-mesa
     - sudo apt-get install libosmesa6
-    - sudo apt-get install libxkbcommon-x11-0 
+    - sudo apt-get install x11-xkb-utils
+    - sudo ldconfig
 
 # Note, add > /dev/null to the end of all these commands once they work
 install:
