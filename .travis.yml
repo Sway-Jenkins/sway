@@ -11,6 +11,7 @@ before_install:
     - sudo apt-get install libglapi-mesa
     - sudo apt-get install libosmesa6
     - sudo apt-get install x11-xkb-utils
+    - sudo apt-get install xcb
     - sudo ldconfig
 
 # Note, add > /dev/null to the end of all these commands once they work
