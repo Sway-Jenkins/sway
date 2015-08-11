@@ -10,8 +10,23 @@ before_install:
     - sudo apt-get install libwayland0
     - sudo apt-get install libosmesa6
     - sudo apt-get install xcb
-    - sudo apt-get install libxcb-composite0-dev
-    - sudo apt-get install libx11-xcb-dev
+    - sudo apt-get install pkg-config
+    - curl https://launchpad.net/ubuntu/+archive/primary/+files/xcb-proto_1.11.orig.tar.gz -o xcb-proto.tgz
+    - tar -xpzf xcb-proto.tgz
+    - cd xcb-proto-1.11
+    - ./configure
+    - make
+    - sudo make install
+    - cd ..
+    - curl  http://xcb.freedesktop.org/dist/libxcb-1.11.tar.gz -o libxcb.tgz
+    - tar -xpzf libxcb.tgz
+    - cd libxcb-1.11
+    - ./configure
+    - make
+    - sudo make install
+    - cd ..
+    - sudo apt-get install libgles2-mesa-dev
+    - sudo apt-get install libgbm-dev
     - sudo ldconfig
 
 # Note, add > /dev/null to the end of all these commands once they work
