@@ -4,13 +4,17 @@ compiler:
     - gcc
     - clang
 
+# Note, eventually add > /dev/null to the end of all these commands once they work
 before_install:
     - sudo apt-get update -qq
+    # Install xorg, wayland, mesa, and xcb for wlc
     - sudo apt-get install xorg
     - sudo apt-get install libwayland0
     - sudo apt-get install libosmesa6
     - sudo apt-get install xcb
+    # Install pkg-config for xcb-proto
     - sudo apt-get install pkg-config
+    # Install xcb-proto for wlc
     - wget https://launchpad.net/ubuntu/+archive/primary/+files/xcb-proto_1.11.orig.tar.gz
     - tar -xpzf xcb-proto_1.11.orig.tar.gz
     - cd xcb-proto-1.11
@@ -18,6 +22,7 @@ before_install:
     - make
     - sudo make install
     - cd ..
+    # Install libxcb for wlc
     - wget http://xcb.freedesktop.org/dist/libxcb-1.11.tar.gz
     - tar -xpzf libxcb-1.11.tar.gz
     - cd libxcb-1.11
@@ -25,12 +30,35 @@ before_install:
     - make
     - sudo make install
     - cd ..
+    # Install yacc for libxkbcommon
+    - sudo apt-get install bison
+    # Install libxkbcommon for wlc
+    - wget http://xkbcommon.org/download/libxkbcommon-0.5.0.tar.xz
+    - tar -xf libxkbcommon-0.5.0.tar.xz
+    - cd libxkbcommon-0.5.0
+    - ./configure
+    - make
+    - sudo make install
+    - cd ..
+    # Install libtool for libinput
+    - sudo apt-get install libtool
+    # Install libtool for mtdev for libinput
+    - sudo apt-get install libmtdev1
+    # Install libevdev for libinput
+    - sudo apt-get install libevdev-dev
+    # Install libinput for wlc
+    - git clone git://anongit.freedesktop.org/wayland/libinput
+    - cd libinput
+    - ./autogen.sh --prefix=/usr/
+    - make
+    - sudo make install
+    - cd ..
     - sudo apt-get install libgles2-mesa-dev
     - sudo apt-get install libgbm-dev
     - sudo ldconfig
 
-# Note, add > /dev/null to the end of all these commands once they work
 install:
+    # Install wlc for sway
     - git clone git://github.com/cloudef/wlc.git
     - cd wlc
     - git submodule update --init --recursive
