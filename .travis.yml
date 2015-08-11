@@ -11,6 +11,7 @@ before_install:
     - sudo apt-get install libosmesa6
     - sudo apt-get install xcb
     - sudo apt-get install libxcb-composite0-dev
+    - sudo apt-get install libx11-xcb-dev
     - sudo ldconfig
 
 # Note, add > /dev/null to the end of all these commands once they work
