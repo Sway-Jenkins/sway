@@ -11,7 +11,11 @@ install:
     - cmake .
     - make
     - sudo make install
+    - cd ..
 
 script:
     cmake .
     make
+
+notifications:
+    email: false
