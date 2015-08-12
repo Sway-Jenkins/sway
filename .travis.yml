@@ -43,7 +43,6 @@ before_install:
     # Install libtool for libinput and mtdev
     - sudo apt-get install libtool
     # Install mtdev for libinput
-    - sudo apt-get install libmtdev1
     - wget http://bitmath.org/code/mtdev/mtdev-1.1.5.tar.gz
     - tar -xpzf mtdev-1.1.5.tar.gz
     - cd mtdev-1.1.5 
@@ -58,6 +57,9 @@ before_install:
     - make
     - sudo make install
     - cd ..
+    # Install libudev for libinput
+    - sudo apt-get install libudev0
+    - sudo apt-get install libudev-dev
     # Install libinput for wlc
     - git clone git://anongit.freedesktop.org/wayland/libinput
     - cd libinput
