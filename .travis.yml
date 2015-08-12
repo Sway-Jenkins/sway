@@ -7,6 +7,9 @@ compiler:
 # Note, eventually add > /dev/null to the end of all these commands once they work
 before_install:
     - sudo apt-get update -qq
+    # Install base-devel and headers
+    - sudo apt-get install linux-headers-`uname -r`
+    - sudo apt-get install build-essential
     # Install xorg, wayland, mesa, and xcb for wlc
     - sudo apt-get install xorg
     - sudo apt-get install libosmesa6
