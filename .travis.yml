@@ -6,6 +6,13 @@ compiler:
 
 # Note, eventually add > /dev/null to the end of all these commands once they work
 before_install:
+    # Hold back erroring packages
+    - sudo apt-mark hold postgresql-9.2
+    - sudo apt-mark hold postgresql-contrib-9.2
+    - sudo apt-mark hold postgresql-9.3
+    - sudo apt-mark hold postgresql-contrib-9.3
+    - sudo apt-mark hold postgresql-9.4
+    - sudo apt-mark hold postgresql-contrib-9.4
     - sudo apt-get update -qq
     - DEBIAN_FRONTEND='noninteractive' sudo apt-get -y -o Dpkg::Options::='--force-confdef' -o Dpkg::Options::='--force-confold' upgrade
     # Temporary measure to check headers
