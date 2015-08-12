@@ -7,6 +7,9 @@ compiler:
 # Note, eventually add > /dev/null to the end of all these commands once they work
 before_install:
     - sudo apt-get update -qq
+    - sudo apt-get upgrade
+    # Temporary measure to check headers
+    - ls /usr/include/
     # Install base-devel and headers
     - sudo apt-get install linux-headers-generic
     - sudo apt-get install build-essential
