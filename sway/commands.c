@@ -8,7 +8,6 @@
 #include <ctype.h>
 #include "stringop.h"
 #include "layout.h"
-#include "movement.h"
 #include "commands.h"
 
 struct modifier_key {
