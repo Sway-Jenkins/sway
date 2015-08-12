@@ -9,8 +9,6 @@
 #include "stringop.h"
 #include "layout.h"
 #include "movement.h"
-#include "log.h"
-#include "workspace.h"
 #include "commands.h"
 
 struct modifier_key {

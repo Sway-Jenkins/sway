@@ -10,7 +10,6 @@
 
 int main(int argc, char **argv) {
 	init_log(L_DEBUG); // TODO: Control this with command line arg
-	init_layout();
 
 	static struct wlc_interface interface = {
 		.output = {
