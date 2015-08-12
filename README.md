@@ -1,9 +1,8 @@
 # sway
 
-"**S**irCmpwn's **Way**land window manager"
-
 [![Build Status](http://ci.gensok.io/job/Sway/badge/icon)](http://ci.gensok.io/job/Sway/)
 
+"**S**irCmpwn's **Way**land window manager"
 
 sway is an i3-compatible window manager for
 [Wayland](http://wayland.freedesktop.org/).
