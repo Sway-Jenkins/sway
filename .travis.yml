@@ -6,20 +6,13 @@ compiler:
 
 # Note, eventually add > /dev/null to the end of all these commands once they work
 before_install:
-    # Hold back erroring packages
-    - sudo apt-mark hold postgresql-9.2
-    - sudo apt-mark hold postgresql-contrib-9.2
-    - sudo apt-mark hold postgresql-9.3
-    - sudo apt-mark hold postgresql-contrib-9.3
-    - sudo apt-mark hold postgresql-9.4
-    - sudo apt-mark hold postgresql-contrib-9.4
-    - sudo apt-get update -qq
-    - DEBIAN_FRONTEND='noninteractive' sudo apt-get -y -o Dpkg::Options::='--force-confdef' -o Dpkg::Options::='--force-confold' upgrade
-    # Temporary measure to check headers
-    - cat /usr/include/time.h
+    # Update packages
+    - sudo apt-get update
     # Install base-devel and headers
     - sudo apt-get install linux-headers-generic
     - sudo apt-get install build-essential
+    # Temporary measure to check headers
+    - cat /usr/include/time.h
     # Install xorg, wayland, mesa, and xcb for wlc
     - sudo apt-get install xorg
     - sudo apt-get install libosmesa6
