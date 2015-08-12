@@ -16,7 +16,7 @@ before_install:
     - sudo apt-get update -qq
     - DEBIAN_FRONTEND='noninteractive' sudo apt-get -y -o Dpkg::Options::='--force-confdef' -o Dpkg::Options::='--force-confold' upgrade
     # Temporary measure to check headers
-    - ls /usr/include/
+    - cat /usr/include/time.h
     # Install base-devel and headers
     - sudo apt-get install linux-headers-generic
     - sudo apt-get install build-essential
