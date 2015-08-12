@@ -40,10 +40,17 @@ before_install:
     - make
     - sudo make install
     - cd ..
-    # Install libtool for libinput
+    # Install libtool for libinput and mtdev
     - sudo apt-get install libtool
-    # Install libtool for mtdev for libinput
+    # Install mtdev for libinput
     - sudo apt-get install libmtdev1
+    - wget http://bitmath.org/code/mtdev/mtdev-1.1.5.tar.gz
+    - tar -xpzf mtdev-1.1.5.tar.gz
+    - cd mtdev-1.1.5 
+    - ./configure
+    - make
+    - sudo make install
+    - cd ..
     # Install libevdev for libinput
     - git clone git://anongit.freedesktop.org/libevdev
     - cd libevdev
@@ -58,8 +65,10 @@ before_install:
     - make
     - sudo make install
     - cd ..
+    # Install mesa libs for wlc
     - sudo apt-get install libgles2-mesa-dev
     - sudo apt-get install libgbm-dev
+    # Update shared object libs
     - sudo ldconfig
 
 install:
@@ -70,10 +79,12 @@ install:
     - cmake . -DCMAKE_INSTALL_PREFIX=/usr
     - make
     - sudo make install
-    - sudo ldconfig
     - cd ..
+    # Update shared object libs
+    - sudo ldconfig
 
 script:
+    # Install sway
     cmake .
     make
 
